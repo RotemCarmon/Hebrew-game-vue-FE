@@ -1,0 +1,20 @@
+.preposition-table-container {
+  table {
+    border-collapse: collapse;
+  }
+  td, th {
+    border: 1px solid black;
+    padding: 15px;
+  }
+  thead {
+    background-color: $ui-bg;
+  }
+  .clue-container {
+    min-height: 30px;
+    .clue {
+      padding: 2px;
+      color: lightslategray;
+      font-weight: 700;
+    }
+  }
+}

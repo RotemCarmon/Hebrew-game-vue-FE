@@ -1,0 +1,11 @@
+.game-over-container {
+  margin: 30px;
+  box-shadow:  0 0  8px $ui-bg;
+  height: 337px;
+  width: 640px;
+  .game-over {
+    font-weight: 700;
+    font-size: 5em;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: $text;
+    direction: rtl;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    font-size: 1em;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+button{
+    all: unset
+}
+
+

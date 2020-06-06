@@ -1,0 +1,29 @@
+
+.btn{
+    background-color: gray;
+    color: $neutral;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 5px;
+    &:hover{
+        background-color: lighten(gray,7%);
+        cursor: pointer;
+    }
+    &:active{
+        box-shadow:inset 0 0 8px darken($btn,5%);
+    }
+}
+.generate-btn {
+    background-color: $pop;
+    box-shadow: 0 0 6px gray;
+    &:hover{
+        background-color: lighten($pop,7%);
+    }
+}
+.clue-btn {
+    background-color: inherit;
+    border: 1px solid $neutral;
+    &:hover{
+        background-color: lighten($pop,7%);
+    }
+}
