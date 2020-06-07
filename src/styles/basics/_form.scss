@@ -1,0 +1,39 @@
+.form-box {
+  direction: rtl;
+  width: 500px;
+  margin: auto;
+  padding: 50px;
+  font-size: 1em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  margin-block-start: 60px;
+  .form-header {
+    align-self: flex-start;
+    font-size: 1.4em;
+    margin: 35px 0;
+  }
+  .form-row {
+    margin-block-end: 30px;
+    width: 100%;
+    .input-label {
+
+      margin-inline-end: 5px;
+    }
+    .input-text {
+      border: 1px solid $border;
+      border-radius: 5px;
+      padding-inline-start: 8px;
+      height: 30px;
+      font-size: 1em;
+    }
+    .input-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+  }
+}
+.line-devider{
+  background-color: $border;
+  opacity: 0.6;
+  height: 1px;
+}

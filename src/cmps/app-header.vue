@@ -1,8 +1,9 @@
 <template>
   <section class="app-header-container">
     <div class="nav">
-      <router-link to="/infinitive">Infinitives</router-link>|
-      <router-link to="/preposition">Prepositions</router-link>
+      <router-link to="/infinitive">שם הפועל</router-link> |
+      <router-link to="/preposition">הטיות</router-link> |
+      <router-link to="/admin">הוספת מילים חדשות</router-link>
     </div>
   </section>
 </template>

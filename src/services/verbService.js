@@ -63,7 +63,6 @@ const TENSE = [
   }
 
 ];
-console.log(PREPOSITION);
 
 
 async function getVerbs() {
@@ -109,7 +108,6 @@ function toggleFuture() {
     TENSE.splice(futureIdx, 1)
   }
   console.log(TENSE);
-  
 }
 
 

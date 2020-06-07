@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import homePage from '../views/home-page.vue'
 import prepositionGenerator from '../views/preposition-generator.vue'
 import infinitiveGame from '../views/infinitive-game.vue'
+import adminPage from '../views/admin-page.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ Vue.use(VueRouter)
     path: '/infinitive',
     name: 'infinitive-game',
     component: infinitiveGame
+  },
+  {
+    path: '/admin',
+    name: 'admin-page',
+    component: adminPage
   }
   
 ]

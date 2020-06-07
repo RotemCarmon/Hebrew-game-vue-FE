@@ -1,26 +1,33 @@
 import { getRandomInt, shuffle } from './utilService';
+import httpService from '../services/httpService';
 import DB from '../../../data/DB.json';
 
-const INFINITIVES = DB;
 
-function showInf() {
-  getRandomInt()
-  console.log('DB', INFINITIVES);
+let INFINITIVES = null;
+
+
+
+async function getVerbs() {
+  const verbs = await httpService.get('verb/');
+  INFINITIVES = verbs;
+  return verbs
 }
 
 
-
-
-export default {
-  showInf,
-  generateQuestions
-}
 
 function generateQuestions() {
-  const questions = INFINITIVES.map((obj) => {
-    return _createQustion(obj)
-  })
-  return shuffle(questions)
+  if(INFINITIVES && INFINITIVES.length > 3) {
+
+    const questions = INFINITIVES.map((obj) => {
+      return _createQustion(obj)
+    })
+    return shuffle(questions)
+  }
+}
+
+export default {
+  getVerbs,
+  generateQuestions
 }
 
 function _createQustion(obj) {

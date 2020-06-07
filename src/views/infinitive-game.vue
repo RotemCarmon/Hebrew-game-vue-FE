@@ -31,16 +31,21 @@ export default {
     }
   },
   created() {
-    this.generateQuestions();
+    this.initGame();
   },
   methods: {
-    generateQuestions() {
+    async initGame() {
       this.isGameOver = false;
       this.currQuestion = 0
+       await infinitiveService.getVerbs();
+       this.generateQuestions()
+
+    },
+    generateQuestions() {
       const questions = infinitiveService.generateQuestions();
-      console.log("QUESTIONS", questions);
-      this.questions = questions.slice(0,10);
-      // this.questions = questions;
+      if(questions) {
+        this.questions = questions.slice(0,10);
+      }
     },
     handleCurrectAnswer() {
       if (this.currQuestion === this.questions.length - 1) {
