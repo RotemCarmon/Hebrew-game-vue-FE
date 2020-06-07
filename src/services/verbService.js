@@ -1,7 +1,7 @@
 import { getRandomInt } from "./utilService";
 import httpService from './httpService';
 // dummy data
-import DB from '../../data/DB.json';
+import DB from '../../../data/DB.json';
 
 async function getVerbs() {
   const verbs = await httpService.get('verb/');

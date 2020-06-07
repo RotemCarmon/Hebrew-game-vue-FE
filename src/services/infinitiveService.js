@@ -1,5 +1,5 @@
 import { getRandomInt, shuffle } from './utilService';
-import DB from '../../data/DB.json';
+import DB from '../../../data/DB.json';
 
 const INFINITIVES = DB;
 
