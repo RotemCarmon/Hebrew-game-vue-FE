@@ -4,7 +4,7 @@
         <label>עתיד</label>
         <input type="checkbox" @change="$emit('toggleFuture')" />
       </div>
-      <button class="clue-btn btn" @click="$emit('giveClue')" >רמז</button>
+      <button class="clue-btn btn" @click="$emit('giveHelp')" >עזרה</button>
     </section>
 </template>
 

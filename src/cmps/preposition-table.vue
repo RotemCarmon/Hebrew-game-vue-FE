@@ -11,7 +11,7 @@
       <tbody>
         <tr v-if="prompt">
           <td class="preposition">{{prompt.preposition}}</td>
-          <td class="verb">{{prompt.verb.hebrewInf}}</td>
+          <td class="verb">{{prompt.inf}}</td>
           <td class="tense">{{prompt.tense}}</td>
         </tr>
         <tr v-else>
@@ -22,7 +22,7 @@
       </tbody>
     </table>
     <div class="clue-container">
-      <div class="clue" v-if="clue">{{clue}}</div>
+      <div class="clue" v-if="help">{{help}}</div>
     </div>
   </div>
 </template>
@@ -34,7 +34,7 @@ export default {
       type: Object,
       require: true
     },
-    clue: {
+    help: {
       type: String
     }
   }

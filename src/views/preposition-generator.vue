@@ -1,7 +1,7 @@
 <template>
   <section class="preposition-generator-container flex column align-center main-layout-container">
-    <preposition-topbar @toggleFuture="toggleFuture" @giveClue="giveClue" />
-    <preposition-table :prompt="this.prompt" :clue="clue" />
+    <preposition-topbar @toggleFuture="toggleFuture" @giveHelp="giveHelp" />
+    <preposition-table :prompt="this.prompt" :help="help" />
     <button class="generate-btn btn" @click="generate">שחק</button>
   </section>
 </template>
@@ -10,12 +10,15 @@
 import verbService from "@/services/verbService.js";
 import prepositionTable from "@/cmps/preposition-table.vue";
 import prepositionTopbar from "@/cmps/preposition-topbar.vue";
+import prepositionTableVue from '../cmps/preposition-table.vue';
 export default {
   name: "preposition-generator",
   data() {
     return {
       prompt: null,
-      clue: null
+      clue: null,
+      answer: '',
+      help: null
     };
   },
   created() {
@@ -24,19 +27,34 @@ export default {
   methods: {
     async getVerbs() {
       const verbs = await verbService.getVerbs();
-      console.log("VERBBB: ", verbs);
+      
     },
     generate() {
-      this.clue = null;
-      const prompt = verbService.generateExercise();
-      this.prompt = prompt;
+      this.help = null;
+      const exercise = verbService.generateExercise();
+      
+      this.prompt = {
+        inf: exercise.verb.hebrewInf,
+        preposition: exercise.preposition.heb,
+        tense: exercise.tense.heb
+      };
+      this.getAnswer(exercise)
+    },
+    async getAnswer(exercise){
+      const query = {
+        id: exercise.verb.id,
+        preposition: exercise.preposition.eng,
+        tense: exercise.tense.eng
+      }
+      const answer = await verbService.getAnswer(query)
+      this.answer = answer;
+      
     },
     toggleFuture() {
       verbService.toggleFuture();
     },
-    giveClue() {
-      console.log("CLUE", this.prompt);
-      this.clue = this.prompt.verb.englishInf;
+    giveHelp() {
+      this.help = this.answer
     }
   },
   components: {
