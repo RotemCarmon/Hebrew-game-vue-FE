@@ -1,11 +1,12 @@
 <template>
   <section class="infinative-game container main-layout-container flex column align-center">
     <template v-if="questions">
-      <infinitive-quest
+      <!-- <infinitive-quest
         v-if="!isGameOver"
         :question="question"
         @correctAnswer="handleCurrectAnswer"
-      />
+      />-->
+      <grid-board v-if="!isGameOver" :gameObj="question" @correctAnswer="handleCurrectAnswer" />
       <div class="game-over-container flex column align-center justify-center" v-else>
         <div class="game-over">המשחק נגמר!</div>
         <button class="btn" @click="generateQuestions">התחל מחדש</button>
@@ -17,6 +18,7 @@
 <script>
 import infinitiveService from "@/services/infinitiveService.js";
 import infinitiveQuest from "@/cmps/infinitive-quest.vue";
+import gridBoard from "../cmps/grid-board.vue";
 export default {
   data() {
     return {
@@ -35,21 +37,19 @@ export default {
   },
   methods: {
     async initGame() {
-      this.isGameOver = false;
-      this.currQuestion = 0
-       await infinitiveService.getVerbs();
-       this.generateQuestions()
-
+      await infinitiveService.getVerbs();
+      this.generateQuestions();
     },
     generateQuestions() {
+      this.isGameOver = false;
+      this.currQuestion = 0;
       const questions = infinitiveService.generateQuestions();
-      if(questions) {
-        this.questions = questions.slice(0,10);
+      if (questions) {
+        this.questions = questions.slice(0, 10);
+        console.log("questions", questions);
       } else {
-        console.log('NO QUESTIONS');
-        
+        console.log("NO QUESTIONS");
       }
-
     },
     handleCurrectAnswer() {
       if (this.currQuestion === this.questions.length - 1) {
@@ -61,7 +61,8 @@ export default {
     }
   },
   components: {
-    infinitiveQuest
+    // infinitiveQuest,
+    gridBoard
   }
 };
 </script>

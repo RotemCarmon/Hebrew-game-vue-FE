@@ -33,9 +33,9 @@ export default {
 function _createQustion(obj) {
   const {englishInf, hebrewInf} = obj;
   return {
-    inf: englishInf,
+    question: englishInf,
     answer: hebrewInf,
-    possibleAnswers: _getPossibleAnswers(hebrewInf)
+    gameItems: _getPossibleAnswers(hebrewInf)
   }
 }
 

@@ -1,6 +1,7 @@
 .game-over-container {
   margin: 30px;
-  box-shadow:  0 0  8px $ui-bg;
+  background-color: $ui-bg;
+  box-shadow:  0 0  8px $border;
   height: 337px;
   width: 640px;
   .game-over {

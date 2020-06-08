@@ -1,7 +1,7 @@
 
 .btn{
     background-color: gray;
-    color: $neutral;
+    color: #e8ead3;
     border-radius: 3px;
     padding: 8px;
     margin: 5px;
@@ -16,6 +16,8 @@
 .generate-btn {
     background-color: $pop;
     box-shadow: 0 0 6px gray;
+    width: 200px;
+    transition: 0.4s;
     &:hover{
         background-color: lighten($pop,7%);
     }
@@ -23,7 +25,24 @@
 .clue-btn {
     background-color: inherit;
     border: 1px solid $neutral;
+    transition: 0.4s;
     &:hover{
         background-color: lighten($pop,7%);
     }
+}
+.submit-btn {
+    padding: 3px 10px;
+    transition: 0.4s;
+    background-color: $pop;
+    color: $ui-bg;
+    border-color: $ui-bg;
+
+    &:hover{
+        cursor: pointer;
+        background-color: lighten($pop,7%);
+    }
+    &:active{
+        box-shadow:inset 0 0 8px darken($pop,5%);
+    }
+
 }

@@ -1,6 +1,23 @@
 .preposition-topbar-container {
-  width: 60%;
-  background-color: mediumpurple;
+  padding: 0 10px;
+  width: 640px;
+  background-color: $pop;
   margin-bottom: 10px;
-  color: $neutral
+  color: $neutral;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr;
+  .right-answers {
+    grid-column: 2  ;
+
+  }
+  .life-count-container {
+    grid-column: 8 / 10  ;
+    &>* {
+      margin: 0 3px;
+    }
+  }
+  .clue-btn {
+    grid-column: 10;
+  }
 }

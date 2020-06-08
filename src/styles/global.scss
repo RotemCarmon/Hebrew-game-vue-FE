@@ -11,6 +11,8 @@
 
 // VIEWS
 
+@import './views/admin-page';
+@import './views/home-page';
 @import './views/preposition-generator';
 @import './views/infinitive-game';
 
@@ -21,3 +23,4 @@
 @import './cmps/preposition-table';
 @import './cmps/preposition-topbar';
 @import './cmps/infinitive-quest';
+@import './cmps/prepostion-input';

@@ -1,0 +1,27 @@
+.preposition-input-container {
+  background-color: $ui-bg;
+  box-shadow:  0 0  8px $border;
+  width: 640px;
+  margin: 10px;
+  padding: 10px; 
+  input{
+    border-radius: 0 5px 5px 0;
+    width: 400px;
+    // background-color: ;
+    padding-inline-start: 10px;
+    font-size: 1.1em;
+    border: 1px solid $border;
+    
+    &:focus {
+      outline: none;
+    }
+  }
+  .submit-btn {
+    border-radius: 5px 0 0 5px ;
+  }
+  &> * {
+    border: none;
+    box-sizing: border-box;
+    height: 40px;
+  }
+}
