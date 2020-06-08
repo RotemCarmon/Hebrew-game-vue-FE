@@ -45,7 +45,11 @@ export default {
       const questions = infinitiveService.generateQuestions();
       if(questions) {
         this.questions = questions.slice(0,10);
+      } else {
+        console.log('NO QUESTIONS');
+        
       }
+
     },
     handleCurrectAnswer() {
       if (this.currQuestion === this.questions.length - 1) {

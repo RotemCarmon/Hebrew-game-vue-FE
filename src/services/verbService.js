@@ -110,12 +110,18 @@ function toggleFuture() {
   console.log(TENSE);
 }
 
+async function addVerb(verb) {
+  const addedVerb = await httpService.post('verb/add', verb)
+  return addedVerb;
+}
+
 
 export default {
   generateExercise,
   toggleFuture,
   getVerbs,
-  getAnswer
+  getAnswer,
+  addVerb
 };
 
 function _generateVerb() {
