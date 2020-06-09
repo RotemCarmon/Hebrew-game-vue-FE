@@ -1,11 +1,6 @@
 <template>
   <section class="infinative-game container main-layout-container flex column align-center">
     <template v-if="questions">
-      <!-- <infinitive-quest
-        v-if="!isGameOver"
-        :question="question"
-        @correctAnswer="handleCurrectAnswer"
-      />-->
       <grid-board v-if="!isGameOver" :gameObj="question" @correctAnswer="handleCurrectAnswer" />
       <div class="game-over-container flex column align-center justify-center" v-else>
         <div class="game-over">המשחק נגמר!</div>
@@ -19,6 +14,7 @@
 import infinitiveService from "@/services/infinitiveService.js";
 import infinitiveQuest from "@/cmps/infinitive-quest.vue";
 import gridBoard from "../cmps/grid-board.vue";
+
 export default {
   data() {
     return {
@@ -62,7 +58,7 @@ export default {
   },
   components: {
     // infinitiveQuest,
-    gridBoard
+    gridBoard,
   }
 };
 </script>

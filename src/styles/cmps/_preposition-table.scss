@@ -1,12 +1,5 @@
 .preposition-table-container {
-  background-color: $ui-bg;
-  box-shadow:  0 0  8px $border;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 640px;
-  padding: 15px;
+
   table {
     font-size: 1.5em;
     border-collapse: collapse;

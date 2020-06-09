@@ -15,6 +15,7 @@ import prepositionTopbar from "@/cmps/preposition-topbar.vue";
 import prepositionTableVue from "@/cmps/preposition-table.vue";
 import prepositionInput from "@/cmps/preposition-input.vue";
 import gridBoard from "@/cmps/grid-board.vue";
+import { eventBus } from "@/services/eventBus.service"
 export default {
   name: "preposition-generator",
   data() {
@@ -38,9 +39,13 @@ export default {
     initGame() {
       this.help = null;
       this.isPlaying = true;
+      this.lifes = 3;
+      this.rightAnswers = 0;
+
       this.generate();  
     },
     generate() {
+      this.help = null;
       const exercise = verbService.generateExercise();
 
       this.prompt = {
@@ -66,26 +71,34 @@ export default {
       this.help = this.answer;
     },
     checkAnswer(submittedAnswer) {
+      if(!this.isPlaying) return
       if(submittedAnswer === this.answer) {
         console.log('You are right!');
+        eventBus.$emit('sendMsg', 'כל הכבוד! 👏')
+        setTimeout(() => {
+          eventBus.$emit('sendMsg', '')
+        }, 1500);
         this.rightAnswers++
         this.generate()
       } else {
         console.log('try again...');
         const lifes = this.lifes;
+        eventBus.$emit('sendMsg', 'טעות! נסה שנית 😓')
+        setTimeout(() => {
+          eventBus.$emit('sendMsg', '')
+        }, 1500);
         if(lifes > 1 ) {
           console.log('lost one!');
           this.lifes--
           // TODO: prompt message notifing that the answer is wrong
           // TODO: ask if to show right answer
-        } else {
+        } else { //## if lest life
           this.lifes--
+          const txt = 'המשחק נגמר ☠️☠️☠️'
+          eventBus.$emit('sendMsg', txt)
           this.isPlaying = false
           console.log('GAME OVER!');
-
           // TODO: promt GAME OVER message with restart button
-
-          
         }
         
       }

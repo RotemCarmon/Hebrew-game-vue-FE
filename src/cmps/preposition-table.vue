@@ -1,5 +1,5 @@
 <template>
-  <div class="preposition-table-container">
+  <div class="preposition-table-container ui-card">
     <table>
       <thead>
         <tr>
@@ -29,6 +29,7 @@
 
 <script>
 export default {
+  name: 'preposition-table',
   props: {
     prompt: {
       type: Object,
@@ -38,5 +39,6 @@ export default {
       type: String
     }
   }
+
 };
 </script>
