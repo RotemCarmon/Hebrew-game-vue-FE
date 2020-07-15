@@ -1,5 +1,6 @@
 .user-mesaage-container {
   position: absolute;
+  
   box-shadow: 0 0 300px $border;
   height: 50%;
   max-height: 400px;
@@ -21,9 +22,10 @@
     
     &:hover {
       cursor: pointer;
-
-    }
-    
+    } 
+  }
+  .restart-btn {
+    justify-items: flex-end;
   }
 }
 

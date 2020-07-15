@@ -1,5 +1,5 @@
 <template>
-  <div class="preposition-table-container ui-card">
+  <div class="conjugation-table-container ui-card">
     <table>
       <thead>
         <tr>
@@ -10,12 +10,12 @@
       </thead>
       <tbody>
         <tr v-if="prompt">
-          <td class="preposition">{{prompt.preposition}}</td>
+          <td class="conjugation">{{prompt.conjugation}}</td>
           <td class="verb">{{prompt.inf}}</td>
           <td class="tense">{{prompt.tense}}</td>
         </tr>
         <tr v-else>
-          <td class="preposition"></td>
+          <td class="conjugation"></td>
           <td class="verb"></td>
           <td class="tense"></td>
         </tr>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'preposition-table',
+  name: 'conjugation-table',
   props: {
     prompt: {
       type: Object,

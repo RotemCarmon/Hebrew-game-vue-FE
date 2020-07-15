@@ -2,7 +2,7 @@ import { getRandomInt } from "./utilService";
 import httpService from './httpService';
 
 let VERB;
-const PREPOSITION = [
+const CONJUGATION = [
   {
     eng: 'me_m',
     heb: 'אני (זכר)'
@@ -77,7 +77,7 @@ async function getAnswer(query) {
   if(query) {
     queryParams.append('id', query.id)
     queryParams.append('tense', query.tense)
-    queryParams.append('preposition', query.preposition)
+    queryParams.append('conjugation', query.conjugation)
   }
   const answers = await httpService.get(`verb/conjugation?${queryParams}`)
   if(answers && answers.length == 1) {
@@ -89,11 +89,11 @@ async function getAnswer(query) {
 
 function generateExercise() {
   const verb = _generateVerb()
-  const preposition = _generatePreposition()
+  const conjugation = _generateConjugation()
   const tense =  _generateTense()
   return {
     verb,
-    preposition,
+    conjugation,
     tense
   }
 }
@@ -131,10 +131,10 @@ function _generateVerb() {
   
 } 
 
-function _generatePreposition() {
-  const prepositionIdx = getRandomInt(0, PREPOSITION.length - 1);
-  const chosenPreposition = PREPOSITION[prepositionIdx];
-  return chosenPreposition
+function _generateConjugation() {
+  const conjugationIdx = getRandomInt(0, CONJUGATION.length - 1);
+  const chosenConjugation = CONJUGATION[conjugationIdx];
+  return chosenConjugation
 }
 
 function _generateTense() {

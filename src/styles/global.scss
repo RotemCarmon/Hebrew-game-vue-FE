@@ -13,15 +13,15 @@
 
 @import './views/admin-page';
 @import './views/home-page';
-@import './views/preposition-generator';
+@import './views/conjugation-generator';
 @import './views/infinitive-game';
 
 
 
 // CMPS
 @import './cmps/app-header';
-@import './cmps/preposition-table';
-@import './cmps/preposition-topbar';
+@import './cmps/conjugation-table';
+@import './cmps/conjugation-topbar';
 @import './cmps/infinitive-quest';
-@import './cmps/prepostion-input';
+@import './cmps/conjugation-input';
 @import './cmps/user-message';

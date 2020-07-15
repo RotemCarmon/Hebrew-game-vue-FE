@@ -1,5 +1,5 @@
 <template>
-  <section class="preposition-topbar-container align-center">
+  <section class="conjugation-topbar-container align-center">
       <div class="toggleFuture">
         <label>עתיד</label>
         <input type="checkbox" @change="$emit('toggleFuture')" />

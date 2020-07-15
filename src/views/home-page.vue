@@ -4,25 +4,31 @@
       <img src="@/assets/infinitive.png" alt="">
       <label>שם הפועל</label>
     </router-link>
-    <router-link to="preposition">
-      <img src="@/assets/preposition.png" alt="">
+    <router-link to="conjugation">
+      <img src="@/assets/conjugation.png" alt="">
       <label>הטיות</label>
     </router-link>
   </div>
 </template>
 
 <script>
-// import infinitiveImg from '../assets/infinitive.png';
-// import prepositionImg from '../assets/preposition.png';
 
+import {eventBus} from '../services/eventBus.service';
 export default {
   name: 'home-page',
-  data(){
-    return {
-      
+  methods: {
+    sendMsg() {
+      const msg = {
+        txt: 'Hello!!!',
+        duriation: 150000,
+        isRestartBtn: true,
+        style: {
+          color: 'red',
+          height: '200px'
+        }
+      }
+      eventBus.$emit('sendMsg',msg)
     }
-  },
-  components: {
   }
 }
 </script>

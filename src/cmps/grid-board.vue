@@ -6,22 +6,18 @@
       <div
         class="grid-cell cell1"
         @click="submitAnswer"
-        :key="gameObj.gameItems[0]"
       >{{gameObj.gameItems[0]}}</div>
       <div
         class="grid-cell cell2"
         @click="submitAnswer"
-        :key="gameObj.gameItems[1]"
       >{{gameObj.gameItems[1]}}</div>
       <div
         class="grid-cell cell3"
         @click="submitAnswer"
-        :key="gameObj.gameItems[2]"
       >{{gameObj.gameItems[2]}}</div>
       <div
         class="grid-cell cell4"
         @click="submitAnswer"
-        :key="gameObj.gameItems[3]"
       >{{gameObj.gameItems[3]}}</div>
     </div>
   </section>
@@ -35,29 +31,18 @@ export default {
       type: Object
     }
   },
-  data() {
-    return {
-      // gameObj : {
-      //   gameItems: ['one', 'two', 'three', 'four'],
-      //   answer: 'three',
-      //   question: null
-      // }
-    };
-  },
   methods : {
     submitAnswer(e) {
-      console.log('Ans', e);
-      
       const selectedAns = e.target.innerText
+
       if(selectedAns === this.gameObj.answer) {
-        console.log('Yeyy');
          e.target.classList.add("correct");
          setTimeout(() => {
            this.$emit('correctAnswer')
+           e.target.classList.remove("correct");
          }, 1500)
 
       } else {
-        console.log('Try again');
         e.target.classList.add("wrong");
         setTimeout(() => {
           e.target.classList.remove("wrong");
@@ -113,7 +98,7 @@ $border: #457b9d;
   .grid-cell.correct {
     background-color: green;
     animation-name: right-ainmation;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
   }
 }
 
@@ -148,9 +133,6 @@ $border: #457b9d;
 @keyframes right-ainmation {
   0% {
     transform: scale(1.05);
-  }
-  50% {
-    transform: scale(1);
   }
 }
 </style>

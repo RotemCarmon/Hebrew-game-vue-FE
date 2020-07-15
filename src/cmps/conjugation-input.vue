@@ -1,5 +1,5 @@
 <template>
-  <div class="preposition-input-container flex align-center justify-center">
+  <div class="conjugation-input-container flex align-center justify-center">
     <input type="text" v-model="answer" />
     <button @click="submitAnswer" class="submit-btn">הגש</button>
   </div>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'preposition-input',
+  name: 'conjugation-input',
   data(){
     return {
       answer: ''

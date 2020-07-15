@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import homePage from '../views/home-page.vue'
-import prepositionGenerator from '../views/preposition-generator.vue'
+import conjugationGenerator from '../views/conjugation-generator.vue'
 import infinitiveGame from '../views/infinitive-game.vue'
 import adminPage from '../views/admin-page.vue'
+
 
 Vue.use(VueRouter)
 
@@ -14,9 +15,9 @@ Vue.use(VueRouter)
     component: homePage
   },
   {
-    path: '/preposition',
-    name: 'preposition-generator',
-    component: prepositionGenerator
+    path: '/conjugation',
+    name: 'conjugation-generator',
+    component: conjugationGenerator
   },
   {
     path: '/infinitive',
@@ -27,8 +28,7 @@ Vue.use(VueRouter)
     path: '/admin',
     name: 'admin-page',
     component: adminPage
-  }
-  
+  }  
 ]
 
 const router = new VueRouter({
